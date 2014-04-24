@@ -4,7 +4,15 @@ Samosa
 Leaderboard for all Fitness Tracking Devices
 
 
-Samosa currently supports {fitbit, vivofit, Jawbone Up, Nikeplus, Argus Lifetrak}
+Samosa currently supports {fitbit, Jawbone Up }
+
+In future it might support { vivofit,Nikeplus, Argus Lifetrak}
+
+Samosa Bot
+======
+
+Samosa bot is resposible for collecting activities and stats from different APIs and storing it in Redis. The bot runs every 30 mins. (Configurable)
+
 
 API
 ======
