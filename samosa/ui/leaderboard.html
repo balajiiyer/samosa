@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+    <title>Samosa: Leaderboard</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.min.js"></script>
+    </head>
+    <body>
+    <h1>Samosa Leaderboard</h1>
+
+    <div id="result">
+
+    </div>
+
+    <script type="text/javascript">
+
+    $(document).ready(function()
+        {
+
+          $.ajax({
+            type: 'GET',
+            url: 'http://samosa.com/stats/',
+            beforeSend:function(){
+              $('#result').html('<div class="loading"><img src="images/loading.gif" alt="Loading..." width=80px, height=80px /></div>');
+            },
+            success:function(data){
+              // successful request; do something with the data
+              $('#result').empty();
+              $(data).each(function(i){
+                $('#result').append('<h4>' + $(this).find('user').text() + '</h4><p>' + $(this).find('data').steps.text() + '</p>');
+              });
+            },
+            error:function(){
+              // failed
+              $('#result').html('<p class="error"><strong>Oops!</strong> Try that again in a few moments.</p>');
+            }
+          });
+
+        });
+
+    </script>
+
+    </body>
+    </html>
