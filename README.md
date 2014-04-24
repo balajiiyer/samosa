@@ -10,7 +10,6 @@ API
 
 ======
 
-
 Add your details to Samosa
 
 POST  /user
