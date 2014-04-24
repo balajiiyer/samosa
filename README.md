@@ -41,6 +41,10 @@ Get stats on all users
         "rankingmetric": "steps"
         }
     ]
+    
+    By default users will be ranked by steps, however the default ranking can be changed by passing a 'rankby' parameter.
+    
+    GET /stats?rankby={steps,calories,distance}
 
 Get stats on a specific user
     
