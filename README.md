@@ -4,7 +4,7 @@ Samosa
 Leaderboard for all Fitness Tracking Devices
 
 
-Samosa currently supports {fitbit, Jawbone Up }
+Samosa currently supports {fitbit, up}
 
 In future it might support { vivofit,Nikeplus, Argus Lifetrak}
 
