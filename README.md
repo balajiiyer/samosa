@@ -42,7 +42,7 @@ Get stats on all users
         }
     ]
     
-    By default users will be ranked by steps, however the default ranking can be changed by passing a 'rankby' parameter.
+    By default, users will be ranked by steps, however the default ranking can be changed by passing a 'rankby' parameter.
     
     GET /stats?rankby={steps,calories,distance}
 
