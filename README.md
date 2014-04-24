@@ -26,11 +26,33 @@ Add your details to Samosa
 Get stats on all users
     
     GET /stats
+    
+    [
+        {
+        "user": "sriram",
+        "rank": 1,
+        "data": { "steps":100, "calories": 200, "distance": 2.8 },
+        "rankingmetric": "steps"
+        },
+        {
+        "user": "balaji",
+        "rank": 2,
+        "data": { "steps":80, "calories": 200, "distance": 2.8 },
+        "rankingmetric": "steps"
+        }
+    ]
 
 Get stats on a specific user
     
     GET /stats?user={username}
-
+    
+    {
+        "user": "sriram",
+        "rank": 1,
+        "data": { "steps":100, "calories": 200, "distance": 2.8 },
+        "rankingmetric": "steps"
+    }
+    
 UI
 ======
 
