@@ -17,53 +17,53 @@ Samosa bot is resposible for collecting activities and stats from different APIs
 API
 ======
 
-Add your details to Samosa
+1. Add user details to Samosa. Typical details include the type of product they are using, and credentials that would help pull data on user's behalf from device provider's API
     
-    POST  /user
-    
-    Content-Type: application/json
-    
-    {
-      "Name" : "Balaji Iyer",
-      "Product" : {fitbit,vivofit,up,nikeplus,argus},
-      "credentials" : apikey, {username, password}, customer secret
-    }
-
-
-
-Get stats on all users
-    
-    GET /stats
-    
-    [
+        POST  /user
+        
+        Content-Type: application/json
+        
         {
-        "user": "sriram",
-        "rank": 1,
-        "data": { "steps":100, "calories": 200, "distance": 2.8 },
-        "rankingmetric": "steps"
-        },
-        {
-        "user": "balaji",
-        "rank": 2,
-        "data": { "steps":80, "calories": 200, "distance": 2.8 },
-        "rankingmetric": "steps"
+          "name" : "Balaji Iyer",
+          "device" : {fitbit,vivofit,up,nikeplus,argus},
+          "credentials" : apikey, {username, password}, customer secret
         }
-    ]
-    
-    By default, users will be ranked by steps, however the default ranking can be changed by passing a 'rankby' parameter.
-    
-    GET /stats?rankby={steps,calories,distance}
 
-Get stats on a specific user
+
+
+2. Get leaderboard
     
-    GET /stats?user={username}
+        GET /leaderboard
+        
+        [
+            {
+                "user": "sriram",
+                "rank": 1,
+                "data": { "steps":100, "calories": 200, "distance": 2.8 },
+                "rankingmetric": "steps"
+            },
+            {
+                "user": "balaji",
+                "rank": 2,
+                "data": { "steps":80, "calories": 200, "distance": 2.8 },
+                "rankingmetric": "steps"
+            }
+        ]
+        
+        By default, users will be ranked by steps, however the default ranking can be changed by passing a 'rankby' parameter.
+        
+        GET /leaderboard?rankby={steps,calories,distance}
+
+3. Get stats on a specific user
     
-    {
-        "user": "sriram",
-        "rank": 1,
-        "data": { "steps":100, "calories": 200, "distance": 2.8 },
-        "rankingmetric": "steps"
-    }
+        GET /stats?user={username}
+        
+        {
+            "user": "sriram",
+            "rank": 1,
+            "data": { "steps":100, "calories": 200, "distance": 2.8 },
+            "rankingmetric": "steps"
+        }
     
 UI
 ======
