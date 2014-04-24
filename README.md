@@ -34,6 +34,6 @@ Get stats on a specific user
 GET /stats?user={username}
 
 UI
-===
+======
 
 Samosa prints a leaderboard using HTML / CSS / 
