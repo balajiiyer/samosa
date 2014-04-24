@@ -68,4 +68,4 @@ Get stats on a specific user
 UI
 ======
 
-Samosa prints a leaderboard using HTML / CSS / 
+Samosa prints a leaderboard by making an AJAX request to the API
