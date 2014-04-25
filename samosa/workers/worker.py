@@ -27,6 +27,8 @@ def main():
                 headers['Accept-Header'] = "application/json"
                 response = requests.get(http_url, headers=headers)
                 resp_body = json.loads(response.content)
+                # import pdb
+                # pdb.set_trace()
                 r.hmset(time.strftime("%d%m%Y") + member,
                         {"steps": resp_body['data']['items'][0]['details']['steps'],
                          "caloriesBMR": resp_body['data']['items'][0]['details']['bmr'],

@@ -16,19 +16,32 @@
 import falcon
 import json
 import redis
+import time
 
 from samosa.utils.json_utils import read_json
-
+from samosa.utils.redis_utils import init_redis
 
 class UserStatsResource:
     def on_get(self, req, resp):
         pass
 
 
+class LeaderboardResource:
+    def on_get(self, req, resp):
+        r = init_redis()
+        resp_return = []
+        for member in r.smembers('members'):
+            details = r.hgetall(time.strftime("%d%m%Y")+member)
+            resp_return.append({"user": member, "data": details})
+        resp.status = falcon.HTTP_200
+        resp.body = json.dumps(resp_return)
+
+
+
 class UserRegisterResource:
     def on_post(self, req, resp):
         document = read_json(req.stream, req.content_length)
-        r = redis.StrictRedis(host='localhost', port=6379, db=0)
+        r = init_redis()
         r.sadd('members', document['name'])
         r.hmset(document['name'], dict((k, v) for k, v in document.items() if k not in 'name'))
         resp.status = falcon.HTTP_200
@@ -38,6 +51,8 @@ app = falcon.API()
 
 user_stats = UserStatsResource()
 register_samosa = UserRegisterResource()
+leaderboard = LeaderboardResource()
 
 app.add_route('/stats', user_stats)
+app.add_route('/leaderboard', leaderboard)
 app.add_route('/user', register_samosa)
