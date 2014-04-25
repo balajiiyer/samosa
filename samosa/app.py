@@ -33,9 +33,11 @@ class LeaderboardResource:
         for member in r.smembers('members'):
             details = r.hgetall(time.strftime("%d%m%Y")+member)
             resp_return.append({"user": member, "data": details})
+
+        sorted_resp = sorted(resp_return, key=lambda k: k['data']['steps'], reverse=True)
         resp.status = falcon.HTTP_200
         resp.set_header('Access-Control-Allow-Origin', '*')
-        resp.body = json.dumps(resp_return)
+        resp.body = json.dumps(sorted_resp)
 
 
 

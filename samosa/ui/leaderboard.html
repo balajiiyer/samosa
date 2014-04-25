@@ -44,7 +44,7 @@
 
               $(jsondata).each(function(i){
 
-                $('#result').append('<h4>' + this.user + '</h4><p>' + this.data.steps + '</p>');
+                $('#result').append('<b>' + this.user + '</b><p>' + this.data.steps + '</p>');
               });
             },
             error:function(request, status, error){
