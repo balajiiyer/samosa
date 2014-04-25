@@ -31,7 +31,7 @@ def main():
                         {"steps": resp_body['data']['items'][0]['details']['steps'],
                          "caloriesBMR": resp_body['data']['items'][0]['details']['bmr'],
                          "distances": 1.6 * resp_body['data']['items'][0]['details']['km']})
-            time.sleep(1800)
+        time.sleep(1800)
 
 
 if __name__ == "__main__":
