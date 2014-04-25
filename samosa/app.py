@@ -1,4 +1,8 @@
 import falcon
+import json
+import redis
+
+from samosa.utils.json_utils import read_json
 
 
 class UserStatsResource:
@@ -8,9 +12,14 @@ class UserStatsResource:
 
 class UserRegisterResource:
     def on_post(self, req, resp):
-        pass
+        document = read_json(req.stream, req.content_length)
+        r = redis.StrictRedis(host='localhost', port=6379, db=0)
+        r.sadd('members', document['name'])
+        r.hmset(document['name'], dict((k, v) for k, v in document.items() if k not in 'name'))
+        resp.status = falcon.HTTP_200
+        resp.body = "Success"
 
-app = falcon.APT()
+app = falcon.API()
 
 user_stats = UserStatsResource()
 register_samosa = UserRegisterResource()
