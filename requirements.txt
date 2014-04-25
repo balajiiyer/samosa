@@ -1,3 +1,4 @@
 falcon>=0.1.8
 fitbit>=0.1.0
 redis>=2.9.1
+requests>=2.2.1
