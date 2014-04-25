@@ -47,7 +47,33 @@ Typical details include the type of product they are using, and credentials that
         "device" : {fitbit,vivofit,up,nikeplus,argus},
         "credentials" : apikey, {username, password}, customer secret
         }
-
+   
+   Example for fitbit:
+   
+   Content-Type: application/json
+         
+        {
+        "credentials": {
+        "client_key": "xx
+        "client_secret": "xx",
+        "resource_owner_key": "xx",
+        "resource_owner_secret": "xx"
+         },
+        "device": "fitbit",
+        "name": "balaji"
+        }
+        
+   Example for jawbone-up:
+   
+   Content-Type: application/json
+         
+        {
+         "credentials": {
+         "Authorization": "Bearer xx
+         },
+         "device": "jawbone-up",
+         "name": "Obul"
+        }
 
 
 **2. Get leaderboard** ::
