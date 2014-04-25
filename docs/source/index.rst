@@ -1,7 +1,7 @@
 Samosa
 ========
 
-Samosa helps you building leaderboards for various fitness devices.
+Samosa helps you build leaderboards for various fitness devices, allowing you to compete with your friends.
 
 Currently it supports:
 
