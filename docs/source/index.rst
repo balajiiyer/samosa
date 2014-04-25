@@ -88,7 +88,7 @@ Typical details include the type of product they are using, and credentials that
 UI
 ---
 
-Samosa prints a leaderboard by making an AJAX request to the API
+Samosa prints a leaderboard by making an AJAX request to the API. Check ui/leaderboard.html for the source.
 
 
 Contribute
