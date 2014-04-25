@@ -33,19 +33,23 @@
 
           $.ajax({
             type: 'GET',
-            url: 'http://samosa.com/leaderboard/',
+            dataType: 'json',
+            url: 'http://127.0.0.1:8000/leaderboard',
             beforeSend:function(){
               $('#result').html('<div class="loading"><img src="images/loading.gif" alt="Loading..." width=80px, height=80px /></div>');
             },
-            success:function(data){
+            success:function(jsondata){
               // successful request; do something with the data
               $('#result').empty();
-              $(data).each(function(i){
-                $('#result').append('<h4>' + $(this).find('user').text() + '</h4><p>' + $(this).find('data').steps.text() + '</p>');
+
+              $(jsondata).each(function(i){
+
+                $('#result').append('<h4>' + this.user + '</h4><p>' + this.data.steps + '</p>');
               });
             },
-            error:function(){
+            error:function(request, status, error){
               // failed
+
               $('#result').html('<p class="error"><strong>Oops!</strong> Try that again in a few moments.</p>');
             }
           });

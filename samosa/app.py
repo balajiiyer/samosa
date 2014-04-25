@@ -34,6 +34,7 @@ class LeaderboardResource:
             details = r.hgetall(time.strftime("%d%m%Y")+member)
             resp_return.append({"user": member, "data": details})
         resp.status = falcon.HTTP_200
+        resp.set_header('Access-Control-Allow-Origin', '*')
         resp.body = json.dumps(resp_return)
 
 
