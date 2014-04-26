@@ -1,3 +1,5 @@
+![Build Status](https://api.travis-ci.org/balajiiyer/samosa.svg)
+
 Samosa
 ======
 
