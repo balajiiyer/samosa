@@ -1,6 +1,4 @@
-![Build Status](https://api.travis-ci.org/balajiiyer/samosa.svg)
-
-Samosa
+Samosa  ![Build Status](https://api.travis-ci.org/balajiiyer/samosa.svg)
 ======
 
 Samosa helps build a leaderboard with popular fitness devices like Fitbit, Jawbone Up etc.
