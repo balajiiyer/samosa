@@ -131,4 +131,4 @@ If you are having issues, please let us know using the github Issue Tracker.
 License
 -------
 
-The project is licensed under the Apache license.
+The project is licensed under the GPL v2 license.
